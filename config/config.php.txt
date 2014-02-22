@@ -1,0 +1,26 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+global $config;
+$config['base_url']           = '';
+$config['default_controller'] = '';
+$config['error_controller']   = '';
+$config['db_type']            = '';
+$config['db_host']            = '';
+$config['db_name']            = '';
+$config['db_username']        = '';
+$config['db_password']        = '';
+
+define('APP_DIR', ROOT_DIR .'app/');
+define('LIBS', ROOT_DIR . 'libs/');
+define('BASE_URL', $config['base_url']);
+define('PUBLIC', $config['base_url'] . "/public/");
+
+require(ROOT_DIR .'system/model.php');
+require(ROOT_DIR .'system/view.php');
+require(ROOT_DIR .'system/controller.php');
+require(ROOT_DIR .'system/bootstrap.php');
+
+?>
