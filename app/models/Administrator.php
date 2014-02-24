@@ -7,5 +7,3 @@ class Administrator extends Model {
   }
 
 }
-
-?>

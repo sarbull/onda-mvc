@@ -7,5 +7,3 @@ class Example extends Model {
   }
 
 }
-
-?>

@@ -23,4 +23,11 @@ require(ROOT_DIR .'system/view.php');
 require(ROOT_DIR .'system/controller.php');
 require(ROOT_DIR .'system/bootstrap.php');
 
-?>
+function __autoload($class) {
+  if(file_exists(LIBS . $class .".php")){
+    require LIBS . $class .".php";
+  }
+  if(file_exists(MODELS . $class .".php")){
+    require MODELS . $class .".php";
+  }
+}
