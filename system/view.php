@@ -9,6 +9,7 @@ class View {
 
   public function __construct($template) {
     $this->template = APP_DIR .'views/'. $template .'.php';
+    $this->setCSS(array(array("public/css/reset.css", "intern")));
   }
 
   public function set($var, $val) {
