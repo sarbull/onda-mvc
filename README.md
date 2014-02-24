@@ -1,8 +1,6 @@
 onda-mvc
 ========
 
-# Description
-
 A simple MVC in PHP. Named after a toilet paper. It's a crap but it gets your job done.
 
 # Config
