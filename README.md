@@ -10,29 +10,25 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
 
 # File structure
 
-app
- - controllers
-  -- Controller1.php
- - models
-  -- Model1.php
- - views
-  -- View1
-    ----index.php
-config
- - config.php
+
+1. app/
+ - controllers/
+ - models/
+ - views/
+2. config/
  - config.php.txt
-libs
+3. libs/
  - Database.php
  - Redirect.php
  - Session.php
-public
- - css
- - img
- - js
-system
+4. public/
+ - css/
+ - img/
+ - js/
+5. system/
  - Bootstrap.php
  - Controller.php
  - Model.php
  - View.php
-.htaccess
-index.php
+6. .htaccess
+7. index.php
