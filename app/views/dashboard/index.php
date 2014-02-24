@@ -1,3 +1,3 @@
-<?php include('/../common/header.php'); ?>
+<?php include(VIEW. 'common/header.php'); ?>
     <p>Welcome to the dashboard.</p>
-<?php include('/../common/footer.php'); ?>
+<?php include(VIEW. 'common/footer.php'); ?>
