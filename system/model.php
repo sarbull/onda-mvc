@@ -45,10 +45,10 @@ class Model {
     }
   }
 
-  function ago($tm, $rcs = 0) {
+  public function ago($tm, $rcs = 0) {
     $cur_tm = time(); $dif = $cur_tm-$tm;
     if($dif == 0){
-      return "Just now";
+      return "just now";
     } else {
       $pds = array('second','minute','hour','day','week','month','year','decade');
       $lngh = array(1,60,3600,86400,604800,2630880,31570560,315705600);
