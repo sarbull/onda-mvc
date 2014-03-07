@@ -32,7 +32,6 @@ class Application {
     $router->map('GET|POST', '/users',                            'users#index',      'users_index');
     $router->map('GET',      '/users.[xml|json:format]?',         'users#type',       'users_type');
     $router->map('GET',      '/users/[i:id]?.[xml|json:format]',  'users#type',       'user_type');
-    $router->map('GET',      '/users.[xml|json:format]',          'users#json',       'users_json_all');
   }
 
   public function error() {
