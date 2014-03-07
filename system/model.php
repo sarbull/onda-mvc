@@ -2,7 +2,6 @@
 
 class Model {
   public $db;
-  public $router;
   function __construct() {
     global $config;
     $this->db = new Database(
@@ -12,8 +11,6 @@ class Model {
       $config['db_username'],
       $config['db_password']
     );
-    global $router;
-    $this->router = $router;
   }
 
   // 2 weeks ago

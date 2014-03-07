@@ -2,11 +2,12 @@
 
 class Controller {
 
-  public $router;
+  public $model;
 
-  public function __construct(){
-    global $router;
-    $this->router = $router;
+  public function __construct($model = NULL){
+    if($model != NULL) {
+      $this->model  = new $model;
+    }
   }
 
   public function loadModel($name){
@@ -45,10 +46,11 @@ class Controller {
   public function json($id = NULL) {
     header('Content-Type: application/json');
     if($id == NULL) {
-      echo '[{"id":1,"username":"admin"},{"id":2,"username":"sarbull"}]';
+      $users = $this->model->all();
     } else {
-      echo '[{"id":2,"username":"sarbull"}]';
+      $users = $this->model->all($id);
     }
+    echo json_encode($users);
   }
 
   public function xml($id) {

@@ -18,6 +18,7 @@ class Application {
   }
 
   public function load($controller, $method, $params) {
+    global $router;
     $controller = new $controller;
     if(method_exists($controller, $method)) {
       $controller->{$method}($params);
@@ -28,10 +29,22 @@ class Application {
 
   public function routes() {
     global $router;
-    $router->map('GET|POST', '/',                                'dashboard#index',   'dashboard');
-    $router->map('GET|POST', '/users',                            'users#index',      'users_index');
-    $router->map('GET',      '/users.[xml|json:format]?',         'users#type',       'users_type');
-    $router->map('GET',      '/users/[i:id]?.[xml|json:format]',  'users#type',       'user_type');
+    $router->map('GET',      '/',                                'dashboard#index', 'dashboard');
+    $router->map('GET',      '/users',                           'users#index',     'users_index');
+    $router->map('GET',      '/users.[xml|json:format]?',        'users#type',      'users_type');
+    $router->map('GET',      '/users/[i:id]?.[xml|json:format]', 'users#type',      'user_type');
+
+    $router->map('GET',      '/users/create',                    'users#create',    'user_create');
+    $router->map('GET',      '/users/[i:id]/show',               'users#show',      'user_show');
+    $router->map('GET',      '/users/[i:id]/edit',               'users#update',    'user_edit');
+    $router->map('POST',     '/users/[i:id]/save',               'users#update',    'user_save');
+    $router->map('POST',     '/users/create',                    'users#save',      'user_create_and_save');
+    $router->map('POST',     '/users/[i:id]/edit',               'users#save',      'user_edit_and_save');
+    $router->map('POST',     '/users/[i:id]/delete',             'users#destroy',   'user_destroy');
+
+
+
+    $router->map('GET|POST', '/users/[i:id]/[create|show|edit|destroy:action]',        'users#action',    'user_action');
   }
 
   public function error() {
