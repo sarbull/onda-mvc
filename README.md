@@ -23,8 +23,6 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
  - config.php.txt
 3. libs/
  - database.php
- - redirect.php
- - session.php
 4. public/
  - css/
  - img/
