@@ -14,13 +14,9 @@
     <td><?=$user->password?></td>
   </tr>
   <tr>
+    <td><a href="<?php echo $this->router->generate("user_edit", array("id" => $user->id_user)); ?>">Edit</a></td>
     <td>
-      <form action="<?php echo $this->router->generate("user_action", array("id" => $user->id_user, 'action' => 'edit')); ?>" method="get">
-        <button type="submit">Edit</button>
-      </form>
-    </td>
-    <td>
-      <form action="<?php echo $this->router->generate('user_action', array('id' => $user->id_user, 'action' => 'destroy')); ?>" method="post">
+      <form action="<?php echo $this->router->generate('user_destroy', array('id' => $user->id_user)); ?>" method="post">
         <button type="submit">Delete</button>
       </form>
     </td>
