@@ -3,7 +3,8 @@ onda-mvc
 
 # Features
 
- - REST design with AltoRouter system.
+ - REST design with AltoRouter system. https://github.com/dannyvankooten/AltoRouter
+ - MySQLi database class. https://github.com/ajillion/PHP-MySQLi-Database-Class.
 
 # Details
 
@@ -22,7 +23,7 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
 2. config/
  - config.php.txt
 3. libs/
- - database.php
+ - mysqlidb.php
 4. public/
  - css/
  - img/
