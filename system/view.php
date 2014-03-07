@@ -2,14 +2,17 @@
 
 class View {
 
-  private $template;
-  private $pageVars = array();
-  private $css      = array();
-  private $js       = array();
+  public  $template;
+  public  $pageVars = array();
+  public  $css      = array();
+  public  $js       = array();
+  public  $router;
 
   public function __construct($template) {
     $this->template = APP_DIR .'views/'. $template .'.php';
     $this->setCSS(array(array("public/css/reset.css", "intern")));
+    global $router;
+    $this->router = $router;
   }
 
   public function set($var, $val) {

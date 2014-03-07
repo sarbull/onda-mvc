@@ -3,31 +3,38 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+global $router;
 global $config;
-$config['base_url']           = '';
-$config['default_controller'] = '';
-$config['error_controller']   = '';
+$config['base_url']           = ''; // http://localhost/my_app/
+$config['base_path']          = ''; // /my_app
 $config['db_type']            = '';
 $config['db_host']            = '';
 $config['db_name']            = '';
 $config['db_username']        = '';
 $config['db_password']        = '';
 
-define('APP_DIR', ROOT_DIR .'app/');
-define('LIBS', ROOT_DIR . 'libs/');
-define('BASE_URL', $config['base_url']);
-define('PUBLIC', $config['base_url'] . "/public/");
+define('APP_DIR',     ROOT_DIR . 'app/');
+define('LIBS',        ROOT_DIR . 'libs/');
+define('CONTROLLERS', APP_DIR  . 'controllers/');
+define('VIEW',        APP_DIR  . 'views/');
+define('MODELS',      APP_DIR  . 'models/');
+define('BASE_URL',    $config['base_url']);
+define('PUBLIC',      $config['base_url'] . "public/");
 
-require(ROOT_DIR .'system/model.php');
-require(ROOT_DIR .'system/view.php');
-require(ROOT_DIR .'system/controller.php');
-require(ROOT_DIR .'system/bootstrap.php');
+require(ROOT_DIR . 'system/model.php');
+require(ROOT_DIR . 'system/view.php');
+require(ROOT_DIR . 'system/controller.php');
+require(ROOT_DIR . 'system/altorouter.php');
+require(ROOT_DIR . 'system/application.php');
 
 function __autoload($class) {
-  if(file_exists(LIBS . $class .".php")){
-    require LIBS . $class .".php";
+  if(file_exists(LIBS . strtolower($class) .".php")){
+    require LIBS . strtolower($class) .".php";
   }
-  if(file_exists(MODELS . $class .".php")){
-    require MODELS . $class .".php";
+  if(file_exists(CONTROLLERS . strtolower($class) .".php")){
+    require CONTROLLERS . strtolower($class) .".php";
+  }
+  if(file_exists(MODELS . strtolower($class) .".php")){
+    require MODELS . strtolower($class) .".php";
   }
 }

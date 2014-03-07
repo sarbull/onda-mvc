@@ -1,6 +1,6 @@
 <?php
 
-class Administrator extends Model {
+class User extends Model {
 
   public function __construct(){
     parent::__construct();
