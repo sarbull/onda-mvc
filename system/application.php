@@ -42,9 +42,6 @@ class Application {
     $router->map('POST',     '/users/[i:id]/edit',               'users#save',      'user_edit_and_save');
     $router->map('POST',     '/users/[i:id]/delete',             'users#destroy',   'user_destroy');
 
-
-
-    $router->map('GET|POST', '/users/[i:id]/[create|show|edit|destroy:action]',        'users#action',    'user_action');
   }
 
   public function error() {
