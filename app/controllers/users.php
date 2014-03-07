@@ -12,15 +12,15 @@ class Users extends Controller {
     $template->render();
   }
 
+  public function create(){
+    $template = $this->loadView('users/new');
+    $template->render();
+  }
+
   public function show($params){
     $this->model->get($params["id"]);
     $template = $this->loadView('users/show');
     $template->set('user', $this->model);
-    $template->render();
-  }
-
-  public function create(){
-    $template = $this->loadView('users/new');
     $template->render();
   }
 
@@ -38,6 +38,7 @@ class Users extends Controller {
     $this->model->username = $_POST['username'];
     $this->model->password = $_POST['password'];
     $this->model->save();
+    Redirect::to('users');
   }
 
   public function destroy($params){

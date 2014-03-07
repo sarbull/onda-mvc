@@ -38,30 +38,14 @@ class Controller {
   public function format($id = NULL, $format){
     switch ($format) {
       case 'json': $this->json($id); break;
-      case 'xml': $this->xml($id); break;
       default: break;
     }
   }
 
   public function json($id = NULL) {
     header('Content-Type: application/json');
-    if($id == NULL) {
-      $users = $this->model->all();
-    } else {
-      $users = $this->model->all($id);
-    }
+    $users = $this->model->all($id);
     echo json_encode($users);
-  }
-
-  public function xml($id) {
-    header('Content-Type: application/xml');
-    echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    if($id != NULL) {
-      echo '<user><id>2</id><username>sarbull</username></user>';
-    } else {
-      echo '<user><id>1</id><username>admin</username></user>';
-      echo '<user><id>2</id><username>sarbull</username></user>';
-    }
   }
 
 }
