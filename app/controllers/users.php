@@ -8,7 +8,7 @@ class Users extends Controller {
 
   public function index(){
     $template = $this->loadView('users/index');
-    $template->set('users', $this->model->all());
+    $template->set('users', $this->model->prepare($this->model->all()));
     $template->render();
   }
 

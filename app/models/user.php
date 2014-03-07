@@ -11,6 +11,7 @@ class User extends Model {
     parent::__construct();
     if($id_user != NULL) {
       $this->get($id_user);
+      $this->gettimes("id_user", $value, $this->table);
     }
   }
 
@@ -19,7 +20,7 @@ class User extends Model {
       $this->db->where("id_user", $id_user);
       return $this->db->getOne("users");
     } else {
-      $cols = Array ("id_user, username");
+      $cols = array("id_user, username, time_updated, time_created");
       return $this->db->get("users", null, $cols);
     }
   }

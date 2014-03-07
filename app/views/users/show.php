@@ -1,5 +1,4 @@
-<?php include(VIEW. 'common/header.php'); ?>
-<p>User</p>
+<p>Show</p>
 <table>
   <tr>
     <td>ID</td>
@@ -22,4 +21,3 @@
     </td>
   </tr>
 </table>
-<?php include(VIEW. 'common/footer.php'); ?>

@@ -12,7 +12,6 @@ class View {
     global $router;
     $this->router = $router;
     $this->template = APP_DIR .'views/'. $template .'.php';
-    // $this->setCSS(array(array("public/css/reset.css", "intern")));
   }
 
   public function set($var, $val) {
@@ -22,7 +21,9 @@ class View {
   public function render(){
     extract($this->pageVars);
     ob_start();
+    require(VIEW . 'common/header.php');
     require($this->template);
+    require(VIEW . 'common/footer.php');
     echo ob_get_clean();
   }
 
