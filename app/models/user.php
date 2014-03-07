@@ -15,17 +15,20 @@ class User extends Model {
   }
 
   public function get($id_user) {
-    $user = $this->db->select("SELECT * FROM users WHERE id_user=" . $id_user);
-    $this->id_user  = $user[0]['id_user'];
-    $this->username = $user[0]['username'];
-    $this->password = $user[0]['password'];
+    $this->db->where("id_user", $id_user);
+    $user = $this->db->getOne("users");
+    $this->id_user  = $user['id_user'];
+    $this->username = $user['username'];
+    $this->password = $user['password'];
   }
 
   public function all($id_user = NULL) {
     if($id_user != NULL) {
-      return $this->db->select("SELECT id_user, username FROM users WHERE id_user=" . $id_user);
+      $this->db->where("id_user", $id_user);
+      return $this->db->getOne("users");
     } else {
-      return $this->db->select("SELECT id_user, username FROM users;");
+      $cols = Array ("id_user, username");
+      return $this->db->get("users", null, $cols);
     }
   }
 
@@ -36,17 +39,21 @@ class User extends Model {
       );
     if($this->id_user != NULL) {
       $data["time_updated"] = time();
-      $this->db->update($this->table, $data, "`id_user`='" . $this->id_user . "'");
+      $this->db->where("id_user", $this->id_user);
+      $this->db->update('users', $data);
     } else {
       $data["time_created"] = time();
-      $this->db->insert($this->table, $data);
+      $this->db->insert('users', $data);
     }
+    Redirect::to('users');
   }
 
   public function delete() {
     if($this->id_user != NULL) {
-      $this->db->delete($this->table, "`id_user`='" . $this->id_user . "'");
+      $this->db->where("id_user", $this->id_user);
+      $this->db->delete('users');
     }
+    Redirect::to('users');
   }
 
 }

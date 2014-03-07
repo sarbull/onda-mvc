@@ -38,7 +38,6 @@ class Users extends Controller {
     $this->model->username = $_POST['username'];
     $this->model->password = $_POST['password'];
     $this->model->save();
-    Redirect::to('users');
   }
 
   public function destroy($params){
