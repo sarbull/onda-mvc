@@ -13,6 +13,13 @@
           <ul class="sub_menu">
             <li><a href="">Globals</a></li>
             <li><a href="">Test</a></li>
+            <li>
+              <span>Sub sub menu</span>
+              <ul class="sub_menu">
+                <li><a href="">Globals</a></li>
+                <li><a href="">Test</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="right"><a href="">Logout</a></li>

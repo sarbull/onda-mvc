@@ -67,6 +67,7 @@
 #menu nav ul ul li {
   float:none;
   position:relative;
+  text-align: left;
 }
 #menu nav ul ul li a {
   padding:10px 10px;
