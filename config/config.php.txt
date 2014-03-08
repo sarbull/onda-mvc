@@ -5,9 +5,9 @@ ini_set('display_errors', 1);
 
 global $router;
 global $config;
-$config['base_url']           = ''; // http://localhost/my_app/
+$config['base_url']           = ''; // http://localhost/my_app
 $config['base_path']          = ''; // /my_app
-$config['db_type']            = '';
+$config['upload_folder']      = ''; // public/uploads
 $config['db_host']            = '';
 $config['db_name']            = '';
 $config['db_username']        = '';
