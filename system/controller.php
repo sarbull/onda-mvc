@@ -19,11 +19,6 @@ class Controller {
     $view = new View($name);
     return $view;
   }
-  
-  public function redirect($loc){
-    global $config;
-    header('Location: '. $config['base_url'] . $loc);
-  }
 
   public function type($params = NULL) {
     if(isset($params["id"])){
