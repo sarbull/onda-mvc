@@ -1,4 +1,36 @@
 body {
-  font-family: Arial;
-  font-size: 12px;
+  font-family: sans-serif;
+  background-color:#ffffff;
+  font-size:12px;
+}
+
+#content {
+  margin: auto;
+  margin-top: 5px;
+  width: 940px;
+  padding: 10px 10px 10px 10px;
+  background-color: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+table tr td,th {
+  padding:5px;
+}
+
+.center {
+  text-align:center;
+}
+
+.right {
+  text-align:right;
+}
+
+
+h1 {
+  font-size:25px;
+  padding:5px 5px 5px 5px;
 }

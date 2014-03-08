@@ -19,7 +19,7 @@ class User extends Model {
       $this->db->where("id_user", $id_user);
       return $this->db->getOne("users");
     } else {
-      $cols = array("id_user, username, time_updated, time_created");
+      $cols = array("id_user, username, password, time_updated, time_created");
       return $this->db->get("users", null, $cols);
     }
   }

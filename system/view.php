@@ -14,6 +14,14 @@ class View {
     $this->router = $router;
     $this->yield = APP_DIR .'views/'. $yield .'.php';
     $this->parts["menu"] = VIEW . 'layout/menu.php';
+    $this->setCSS(array(
+      array("public/css/reset.css", "intern"),
+      array("public/css/style.css", "intern"),
+      array("public/css/menu.css", "intern")
+    ));
+    $this->setJS(array(
+      array("public/js/jquery-1.11.0.min.js", "intern")
+    ));
   }
 
   public function set($var, $val) {
