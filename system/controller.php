@@ -10,11 +10,6 @@ class Controller {
     }
   }
 
-  public function loadModel($name){
-    $model = new $name;
-    return $model;
-  }
-
   public function loadView($name){
     $view = new View($name);
     return $view;
