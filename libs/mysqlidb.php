@@ -202,7 +202,7 @@ class MysqliDb
          if(isset($res[0])){
             return $res[0];
          } else {
-            return false;
+            return array();
          }
      }
 
