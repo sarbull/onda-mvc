@@ -7,34 +7,34 @@ class Users extends Controller {
   }
 
   public function index(){
-    $template = $this->loadView('users/index');
-    $template->set('page_title', 'Users index page');
-    $template->set('users', $this->model->prepare($this->model->all()));
-    $template->render();
+    $this->view->loadView('users/index');
+    $this->view->set('page_title', 'Users index page');
+    $this->view->set('users', $this->model->prepare($this->model->all()));
+    $this->view->render();
   }
 
   public function create(){
-    $template = $this->loadView('users/new');
-    $template->set('page_title', 'Create new user');
-    $template->render();
+    $this->view->loadView('users/new');
+    $this->view->set('page_title', 'Create new user');
+    $this->view->render();
   }
 
   public function show($params){
     $this->model->get($params["id"]);
     $this->model->exists();
-    $template = $this->loadView('users/show');
-    $template->set('page_title', 'View user: ' . $this->model->username);
-    $template->set('user', $this->model);
-    $template->render();
+    $this->view->loadView('users/show');
+    $this->view->set('page_title', 'View user: ' . $this->model->username);
+    $this->view->set('user', $this->model);
+    $this->view->render();
   }
 
   public function update($params){
     $this->model->get($params["id"]);
     $this->model->exists();
-    $template = $this->loadView('users/edit');
-    $template->set('page_title', 'Edit user: ' . $this->model->username);
-    $template->set('user', $this->model);
-    $template->render();
+    $this->view->loadView('users/edit');
+    $this->view->set('page_title', 'Edit user: ' . $this->model->username);
+    $this->view->set('user', $this->model);
+    $this->view->render();
   }
 
   public function save($params){

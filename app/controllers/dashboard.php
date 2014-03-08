@@ -2,11 +2,13 @@
 
 class Dashboard extends Controller {
 
+  public function __construct(){
+    parent::__construct();
+  }
+
   public function index() {
-    $template = $this->loadView('dashboard/index');
-    // $template->setCSS(array(array("public/css/style.css", "intern")));
-    // $template->setJS(array(array("public/js/index.js", "intern")));
-    $template->render();
+    $this->view->loadView('dashboard/index');
+    $this->view->render();
   }
 
 }

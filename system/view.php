@@ -7,21 +7,24 @@ class View {
   public $css      = array();
   public $js       = array();
   public $router;
-  public $parts = array();
+  public $parts    = array();
 
-  public function __construct($yield) {
+  public function __construct() {
     global $router;
     $this->router = $router;
-    $this->yield = APP_DIR .'views/'. $yield .'.php';
     $this->parts["menu"] = VIEW . 'layout/menu.php';
     $this->setCSS(array(
       array("public/css/reset.css", "intern"),
       array("public/css/style.css", "intern"),
-      array("public/css/menu.css", "intern")
+      array("public/css/menu.css",  "intern")
     ));
     $this->setJS(array(
       array("public/js/jquery-1.11.0.min.js", "intern")
     ));
+  }
+
+  public function loadView($yield) {
+    $this->yield = APP_DIR .'views/'. $yield .'.php';
   }
 
   public function set($var, $val) {

@@ -7,10 +7,13 @@ class Error extends Controller {
   }
 
   function error404() {
-    $template = $this->loadView('errors/404');
-    $template->parts["menu"] = NULL;
-    $template->set('page_title', '404 Error');
-    $template->render();
+    $this->view->loadView('errors/404');
+    $this->view->parts["menu"] = NULL;
+    $this->view->set('page_title', '404 Error');
+    $this->view->setJS(array(
+      array('public/js/404.js', "intern")
+    ));
+    $this->view->render();
   }
 
 }

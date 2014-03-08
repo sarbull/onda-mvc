@@ -3,16 +3,14 @@
 class Controller {
 
   public $model;
+  public $view;
+  public $error;
 
   public function __construct($model = NULL){
     if($model != NULL) {
       $this->model  = new $model;
     }
-  }
-
-  public function loadView($name){
-    $view = new View($name);
-    return $view;
+    $this->view = new View();
   }
 
   public function type($params = NULL) {
