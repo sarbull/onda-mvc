@@ -11,7 +11,6 @@ class User extends Model {
     parent::__construct();
     if($id_user != NULL) {
       $this->get($id_user);
-      $this->gettimes("id_user", $value, $this->table);
     }
   }
 
@@ -32,6 +31,7 @@ class User extends Model {
       $this->id_user  = $user['id_user'];
       $this->username = $user['username'];
       $this->password = $user['password'];
+      $this->gettimes("id_user", $this->id_user, $this->table);
     }
   }
 
