@@ -33,15 +33,19 @@ class Application {
     $router->map('GET',      '/users',                           'users#index',     'users_index');
     $router->map('GET',      '/users.[xml|json:format]?',        'users#type',      'users_type');
     $router->map('GET',      '/users/[i:id]?.[xml|json:format]', 'users#type',      'user_type');
+    $this->mapdefault("users");
 
-    $router->map('GET',      '/users/create',                    'users#create',    'user_create');
-    $router->map('GET',      '/users/[i:id]/show',               'users#show',      'user_show');
-    $router->map('GET',      '/users/[i:id]/edit',               'users#update',    'user_edit');
-    $router->map('POST',     '/users/[i:id]/save',               'users#update',    'user_save');
-    $router->map('POST',     '/users/create',                    'users#save',      'user_create_and_save');
-    $router->map('POST',     '/users/[i:id]/edit',               'users#save',      'user_edit_and_save');
-    $router->map('POST',     '/users/[i:id]/delete',             'users#destroy',   'user_destroy');
+  }
 
+  public function mapdefault($controller) {
+    global $router;
+    $router->map('GET',      '/'.$controller .'/create',        $controller .'#create',  $controller.'_create');
+    $router->map('GET',      '/'.$controller .'/[i:id]/show',   $controller .'#show',    $controller.'_show');
+    $router->map('GET',      '/'.$controller .'/[i:id]/edit',   $controller .'#update',  $controller.'_edit');
+    $router->map('POST',     '/'.$controller .'/[i:id]/save',   $controller .'#update',  $controller.'_save');
+    $router->map('POST',     '/'.$controller .'/create',        $controller .'#save',    $controller.'_create_and_save');
+    $router->map('POST',     '/'.$controller .'/[i:id]/edit',   $controller .'#save',    $controller.'_edit_and_save');
+    $router->map('POST',     '/'.$controller .'/[i:id]/delete', $controller .'#destroy', $controller.'_destroy');
   }
 
   public function error() {
