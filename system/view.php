@@ -2,16 +2,18 @@
 
 class View {
 
-  public  $yield;
-  public  $pageVars = array();
-  public  $css      = array();
-  public  $js       = array();
-  public  $router;
+  public $yield;
+  public $pageVars = array();
+  public $css      = array();
+  public $js       = array();
+  public $router;
+  public $parts = array();
 
   public function __construct($yield) {
     global $router;
     $this->router = $router;
     $this->yield = APP_DIR .'views/'. $yield .'.php';
+    $this->parts["menu"] = VIEW . 'layout/menu.php';
   }
 
   public function set($var, $val) {

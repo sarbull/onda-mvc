@@ -11,7 +11,6 @@ class Controller {
   }
 
   public function loadModel($name){
-    require(APP_DIR .'models/'. strtolower($name) .'.php');
     $model = new $name;
     return $model;
   }
@@ -25,7 +24,6 @@ class Controller {
     global $config;
     header('Location: '. $config['base_url'] . $loc);
   }
-
 
   public function type($params = NULL) {
     if(isset($params["id"])){

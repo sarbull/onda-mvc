@@ -1,7 +1,9 @@
 <?php include(VIEW . 'layout/header.php'); ?>
+<?php if($this->parts["menu"]) { ?>
   <div id="menu">
-<?php include(VIEW . 'layout/menu.php'); ?>
+<?php include($this->parts["menu"]); ?>
   </div>
+<?php } ?>
   <div id="content">
 <?php include($this->yield); ?>
   </div>
