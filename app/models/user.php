@@ -39,7 +39,6 @@ class User extends Model {
       "password" => $this->password
     );
     $this->id_user ? $this->update($data) : $this->create($data);
-    Redirect::to('users');
   }
 
   public function update($data) {
@@ -50,7 +49,7 @@ class User extends Model {
 
   public function create($data) {
     $data["time_created"] = time();
-    $this->db->insert('users', $data);
+    $this->get($this->db->insert('users', $data));
   }
 
   public function delete() {
@@ -58,7 +57,6 @@ class User extends Model {
       $this->db->where("id_user", $this->id_user);
       $this->db->delete('users');
     }
-    Redirect::to('users');
   }
 
 }

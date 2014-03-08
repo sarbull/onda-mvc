@@ -43,11 +43,13 @@ class Users extends Controller {
     }
     $this->model->profile_picture = $uploader->file_name;
     $this->model->save();
+    Redirect::to('users');
   }
 
   public function destroy($params){
     $this->model->get($params["id"]);
     $this->model->delete();
+    Redirect::to('users');
   }
 
 }
