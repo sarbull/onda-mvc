@@ -37,6 +37,11 @@ class Users extends Controller {
     }
     $this->model->username = $_POST['username'];
     $this->model->password = $_POST['password'];
+    if (!empty($_FILES['profile_picture'])) {
+      $uploader = new Uploader();
+      $uploader->upload($_FILES['profile_picture']);
+    }
+    $this->model->profile_picture = $uploader->file_name;
     $this->model->save();
   }
 
