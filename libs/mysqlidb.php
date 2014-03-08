@@ -199,7 +199,11 @@ class MysqliDb
      public function getOne($tableName, $columns = '*') 
      {
          $res = $this->get ($tableName, 1, $columns);
-         return $res[0];
+         if(isset($res[0])){
+            return $res[0];
+         } else {
+            return false;
+         }
      }
 
     /**

@@ -28,9 +28,11 @@ class User extends Model {
   public function get($id_user) {
     $this->db->where("id_user", $id_user);
     $user = $this->db->getOne("users");
-    $this->id_user  = $user['id_user'];
-    $this->username = $user['username'];
-    $this->password = $user['password'];
+    if($user){
+      $this->id_user  = $user['id_user'];
+      $this->username = $user['username'];
+      $this->password = $user['password'];
+    }
   }
 
   public function save() {
@@ -56,6 +58,14 @@ class User extends Model {
     if($this->id_user != NULL) {
       $this->db->where("id_user", $this->id_user);
       $this->db->delete('users');
+    }
+  }
+
+  public function exists(){
+    if($this->id_user) {
+      return true;
+    } else {
+      Redirect::to('users');
     }
   }
 

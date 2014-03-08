@@ -19,6 +19,7 @@ class Users extends Controller {
 
   public function show($params){
     $this->model->get($params["id"]);
+    $this->model->exists();
     $template = $this->loadView('users/show');
     $template->set('user', $this->model);
     $template->render();
@@ -26,6 +27,7 @@ class Users extends Controller {
 
   public function update($params){
     $this->model->get($params["id"]);
+    $this->model->exists();
     $template = $this->loadView('users/edit');
     $template->set('user', $this->model);
     $template->render();
