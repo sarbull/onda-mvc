@@ -8,12 +8,14 @@ class Users extends Controller {
 
   public function index(){
     $template = $this->loadView('users/index');
+    $template->set('page_title', 'Users index page');
     $template->set('users', $this->model->prepare($this->model->all()));
     $template->render();
   }
 
   public function create(){
     $template = $this->loadView('users/new');
+    $template->set('page_title', 'Create new user');
     $template->render();
   }
 
@@ -21,6 +23,7 @@ class Users extends Controller {
     $this->model->get($params["id"]);
     $this->model->exists();
     $template = $this->loadView('users/show');
+    $template->set('page_title', 'View user: ' . $this->model->username);
     $template->set('user', $this->model);
     $template->render();
   }
@@ -29,6 +32,7 @@ class Users extends Controller {
     $this->model->get($params["id"]);
     $this->model->exists();
     $template = $this->loadView('users/edit');
+    $template->set('page_title', 'Edit user: ' . $this->model->username);
     $template->set('user', $this->model);
     $template->render();
   }
