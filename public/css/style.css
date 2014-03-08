@@ -4,6 +4,15 @@ body {
   font-size:12px;
 }
 
+a {
+  color:#0000a5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #content {
   margin: auto;
   margin-top: 5px;
