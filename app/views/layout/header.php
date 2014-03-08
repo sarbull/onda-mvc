@@ -14,7 +14,3 @@
 <?php } ?>
   </head>
   <body>
-  <ul>
-    <li><a href="<?php echo BASE_URL; ?>users">Users</a></li>
-    <li><a href="<?php echo BASE_URL; ?>users/create">Create</a></li>
-  </ul>

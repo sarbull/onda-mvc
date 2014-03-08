@@ -2,16 +2,16 @@
 
 class View {
 
-  public  $template;
+  public  $yield;
   public  $pageVars = array();
   public  $css      = array();
   public  $js       = array();
   public  $router;
 
-  public function __construct($template) {
+  public function __construct($yield) {
     global $router;
     $this->router = $router;
-    $this->template = APP_DIR .'views/'. $template .'.php';
+    $this->yield = APP_DIR .'views/'. $yield .'.php';
   }
 
   public function set($var, $val) {
@@ -21,9 +21,7 @@ class View {
   public function render(){
     extract($this->pageVars);
     ob_start();
-    require(VIEW . 'common/header.php');
-    require($this->template);
-    require(VIEW . 'common/footer.php');
+    require(VIEW . 'layout/page.php');
     echo ob_get_clean();
   }
 

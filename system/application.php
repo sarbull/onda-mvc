@@ -30,7 +30,7 @@ class Application {
   public function routes() {
     global $router;
     $router->map('GET',      '/',                                'dashboard#index', 'dashboard');
-    $router->map('GET',      '/users',                           'users#index',     'users_index');
+    $router->map('GET',      '/users',                           'users#index',     'users');
     $router->map('GET',      '/users.[xml|json:format]?',        'users#type',      'users_type');
     $router->map('GET',      '/users/[i:id]?.[xml|json:format]', 'users#type',      'user_type');
     $this->mapdefault("users");
