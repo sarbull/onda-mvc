@@ -39,7 +39,8 @@ require(ROOT_DIR . 'system/application.php');
 /* Global autoloader */
 
 function __autoload($class) {
-  if(file_exists(LIBS .        strtolower($class) .".php")){ require LIBS .        strtolower($class) .".php"; }
-  if(file_exists(CONTROLLERS . strtolower($class) .".php")){ require CONTROLLERS . strtolower($class) .".php"; }
-  if(file_exists(MODELS .      strtolower($class) .".php")){ require MODELS .      strtolower($class) .".php"; }
+  $class = strtolower($class);
+  if(file_exists(LIBS .        $class .".php")){ require LIBS .        $class .".php"; }
+  if(file_exists(CONTROLLERS . $class .".php")){ require CONTROLLERS . $class .".php"; }
+  if(file_exists(MODELS .      $class .".php")){ require MODELS .      $class .".php"; }
 }
