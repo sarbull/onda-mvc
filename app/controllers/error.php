@@ -10,9 +10,7 @@ class Error extends Controller {
     $this->view->loadView('errors/404');
     $this->view->parts["menu"] = NULL;
     $this->view->set('page_title', '404 Error');
-    $this->view->setJS(array(
-      array('public/js/404.js')
-    ));
+    $this->view->setJS(array(array('404.js')));
     $this->view->render();
   }
 

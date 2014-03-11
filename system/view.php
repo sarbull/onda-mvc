@@ -13,14 +13,8 @@ class View {
     global $router;
     $this->router = $router;
     $this->parts["menu"] = VIEW . 'layout/menu.php';
-    $this->setCSS(array(
-      array("public/css/reset.css"),
-      array("public/css/style.css"),
-      array("public/css/menu.css")
-    ));
-    $this->setJS(array(
-      array("public/js/jquery-1.11.0.min.js")
-    ));
+    $this->setCSS(array(array("reset.css"), array("style.css"), array("menu.css")));
+    $this->setJS(array(array("jquery-1.11.0.min.js")));
   }
 
   public function loadView($yield) {
@@ -44,7 +38,7 @@ class View {
       if($http == 'http://'){
         array_push($this->css, $file[0]);
       } else {
-        array_push($this->css, BASE_URL . $file[0]);
+        array_push($this->css, PUBLIC_FOLDER . 'css/' . $file[0]);
       }
     }
   }
@@ -55,7 +49,7 @@ class View {
       if($http == 'http://'){
         array_push($this->js, $file[0]);
       } else {
-        array_push($this->js, BASE_URL . $file[0]);
+        array_push($this->js, PUBLIC_FOLDER . 'js/' . $file[0]);
       }
     }
   }

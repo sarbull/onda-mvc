@@ -22,13 +22,13 @@ $config['db_password']        = '';
 
 /* Global defines */
 
-define('APP_DIR',     ROOT_DIR . 'app/');
-define('LIBS',        ROOT_DIR . 'libs/');
-define('CONTROLLERS', APP_DIR  . 'controllers/');
-define('VIEW',        APP_DIR  . 'views/');
-define('MODELS',      APP_DIR  . 'models/');
-define('BASE_URL',    $config['base_url']);
-define('PUBLIC',      $config['base_url'] . "public/");
+define('APP_DIR'      , ROOT_DIR . 'app/');
+define('LIBS'         , ROOT_DIR . 'libs/');
+define('CONTROLLERS'  , APP_DIR  . 'controllers/');
+define('VIEW'         , APP_DIR  . 'views/');
+define('MODELS'       , APP_DIR  . 'models/');
+define('BASE_URL'     , $config['base_url']);
+define('PUBLIC_FOLDER', $config['base_url'] . "public/");
 
 require(ROOT_DIR . 'system/model.php');
 require(ROOT_DIR . 'system/view.php');
