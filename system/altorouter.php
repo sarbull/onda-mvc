@@ -62,7 +62,8 @@ class AltoRouter {
 
     if($name) {
       if(isset($this->namedRoutes[$name])) {
-        throw new \Exception("Can not redeclare route '{$name}'");
+        // throw new \Exception("Can not redeclare route '{$name}'");
+        die("Can not redeclare route '{" . $name . "}'");
       } else {
         $this->namedRoutes[$name] = $route;
       }
@@ -85,7 +86,8 @@ class AltoRouter {
 
     // Check if named route exists
     if(!isset($this->namedRoutes[$routeName])) {
-      throw new \Exception("Route '{$routeName}' does not exist.");
+      // throw new \Exception("Route '{" . $routeName ."}' does not exist.");
+      die("Route '{" . $routeName ."}' does not exist.");
     }
 
     // Replace named parameters
