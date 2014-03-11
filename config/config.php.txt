@@ -5,13 +5,22 @@ ini_set('display_errors', 1);
 
 global $router;
 global $config;
-$config['base_url']           = ''; // http://localhost/my_app
-$config['base_path']          = ''; // /my_app
-$config['upload_folder']      = ''; // public/uploads
+
+/* Default settings */
+
+$config['http_host']          = $_SERVER['HTTP_HOST'];
+$config['base_path']          = dirname($_SERVER['PHP_SELF']);
+$config['base_url']           = 'http://' . $config['http_host'] . $config['base_path'] . "/";
+
+/* Custom settings */
+
+$config['upload_folder']      = ''; // public/uploads/
 $config['db_host']            = '';
 $config['db_name']            = '';
 $config['db_username']        = '';
 $config['db_password']        = '';
+
+/* Global defines */
 
 define('APP_DIR',     ROOT_DIR . 'app/');
 define('LIBS',        ROOT_DIR . 'libs/');
@@ -27,14 +36,10 @@ require(ROOT_DIR . 'system/controller.php');
 require(ROOT_DIR . 'system/altorouter.php');
 require(ROOT_DIR . 'system/application.php');
 
+/* Global autoloader */
+
 function __autoload($class) {
-  if(file_exists(LIBS . strtolower($class) .".php")){
-    require LIBS . strtolower($class) .".php";
-  }
-  if(file_exists(CONTROLLERS . strtolower($class) .".php")){
-    require CONTROLLERS . strtolower($class) .".php";
-  }
-  if(file_exists(MODELS . strtolower($class) .".php")){
-    require MODELS . strtolower($class) .".php";
-  }
+  if(file_exists(LIBS .        strtolower($class) .".php")){ require LIBS .        strtolower($class) .".php"; }
+  if(file_exists(CONTROLLERS . strtolower($class) .".php")){ require CONTROLLERS . strtolower($class) .".php"; }
+  if(file_exists(MODELS .      strtolower($class) .".php")){ require MODELS .      strtolower($class) .".php"; }
 }
