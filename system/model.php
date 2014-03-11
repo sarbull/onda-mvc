@@ -60,16 +60,20 @@ class Model {
     }
   }
 
-  public function prepare($datas) {
-    for($i = 0; $i < count($datas); $i++) {
-      if($datas[$i]["time_updated"] == 0){
-        $datas[$i]["time_updated"] = "-";
+  public function prepare($data) {
+    for($i = 0; $i < count($data); $i++) {
+      if($data[$i]["time_updated"] == 0){
+        $data[$i]["time_updated"] = "-";
       } else {
-        $datas[$i]["time_updated"] = $this->ago($datas[$i]["time_updated"]);
+        $data[$i]["time_updated"] = $this->ago($data[$i]["time_updated"]);
       }
-      $datas[$i]["time_created"] = $this->ago($datas[$i]["time_created"]);
+      if($data[$i]["time_created"] == 0){
+        $data[$i]["time_created"] = "-";
+      } else {
+        $data[$i]["time_created"] = $this->ago($data[$i]["time_created"]);
+      }
     }
-    return $datas;
+    return $data;
   }
 
 }

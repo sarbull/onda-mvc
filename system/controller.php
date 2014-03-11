@@ -32,6 +32,7 @@ class Controller {
     header('Content-Type: application/json');
     $users = $this->model->all($id);
     echo json_encode($users);
+    exit;
   }
 
 }
