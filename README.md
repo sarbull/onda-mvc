@@ -8,7 +8,7 @@ onda-mvc
 
 # Details
 
-A simple MVC in PHP. Named after a toilet paper. It's a crap but it gets your job done.
+A simple MVC in PHP.
 
 # Config
 Just create a new config.php out of config/config.php.txt and configure it as you need.
