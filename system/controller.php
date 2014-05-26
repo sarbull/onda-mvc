@@ -30,8 +30,8 @@ class Controller {
 
   public function json($id = NULL) {
     header('Content-Type: application/json');
-    $users = $this->model->all($id);
-    echo json_encode($users);
+    $data = $this->model->all($id);
+    echo json_encode($data);
     exit;
   }
 
