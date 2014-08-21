@@ -15,10 +15,6 @@ $config['base_url']           = 'http://' . $config['http_host'] . $config['base
 /* Custom settings */
 
 $config['upload_folder']      = ''; // public/uploads/
-$config['db_host']            = '';
-$config['db_name']            = '';
-$config['db_username']        = '';
-$config['db_password']        = '';
 
 /* Global defines */
 
