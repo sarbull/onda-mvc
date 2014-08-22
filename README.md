@@ -14,16 +14,16 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
 # File structure
 1. app/
  - controllers/
-  - Welcome.php
+   - Welcome.php
  - models/
-  - User.php
+   - User.php
  - views/
-  - layout/
-   - footer.php
-   - header.php
-   - page.php
-  - welcome/
-   - index.php
+   - layout/
+     - footer.php
+     - header.php
+     - page.php
+   - welcome/
+     - index.php
 2. config/
  - config.php.txt
 3. libs/
