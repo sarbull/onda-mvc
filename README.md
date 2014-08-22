@@ -1,17 +1,17 @@
 onda-mvc
 ========
 
-# Features
+## Features
  - [ActiveRecord ORM library.](http://www.phpactiverecord.org/)
  - [REST design with AltoRouter system.](https://github.com/dannyvankooten/AltoRouter)
 
-# Details
+## Details
 My implementation of a simple MVC in PHP.
 
-# Config
+## Config
 Just create a new config.php out of config/config.php.txt and configure it as you need.
 
-# File structure
+## File structure
 1. app/
  - controllers/
    - Welcome.php
@@ -42,3 +42,9 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
  - View.php
 6. .htaccess
 7. index.php
+
+## Contributing
+- Fork it
+- work on that feature branch
+- push changes
+- create Pull Request
