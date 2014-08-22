@@ -28,6 +28,7 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
  - config.php.txt
 3. libs/
  - php-activerecord/
+ - Redirect.php
 4. public/
  - css/
  - img/
