@@ -5,16 +5,7 @@ ini_set('display_errors', 1);
 
 global $router;
 global $config;
-
-/* Default settings */
-
-$config['http_host']          = $_SERVER['HTTP_HOST'];
-$config['base_path']          = dirname($_SERVER['PHP_SELF']);
-$config['base_url']           = 'http://' . $config['http_host'] . $config['base_path'] . "/";
-
-/* Custom settings */
-
-$config['upload_folder']      = ''; // public/uploads/
+global $db;
 
 /* Global defines */
 
@@ -26,17 +17,60 @@ define('MODELS'       , APP_DIR  . 'models/');
 define('BASE_URL'     , $config['base_url']);
 define('PUBLIC_FOLDER', $config['base_url'] . "public/");
 
-require(ROOT_DIR . 'system/model.php');
-require(ROOT_DIR . 'system/view.php');
-require(ROOT_DIR . 'system/controller.php');
-require(ROOT_DIR . 'system/altorouter.php');
-require(ROOT_DIR . 'system/application.php');
+/* Default settings */
 
-/* Global autoloader */
+$config['http_host'] = $_SERVER['HTTP_HOST'];
+$config['base_path'] = dirname($_SERVER['PHP_SELF']);
+$config['base_url']  = 'http://' . $config['http_host'] . $config['base_path'];
 
-function __autoload($class) {
-  $class = strtolower($class);
-  if(file_exists(LIBS .        $class .".php")){ require LIBS .        $class .".php"; }
-  if(file_exists(CONTROLLERS . $class .".php")){ require CONTROLLERS . $class .".php"; }
-  if(file_exists(MODELS .      $class .".php")){ require MODELS .      $class .".php"; }
+/* Database settings */
+
+$db['user']          = '';
+$db['password']      = '';
+$db['server']        = '';
+$db['db_name']       = '';
+
+/* System require */
+
+require(ROOT_DIR . 'system/View.php');
+require(ROOT_DIR . 'system/Controller.php');
+require(ROOT_DIR . 'system/AltoRouter.php');
+require(ROOT_DIR . 'system/Application.php');
+require(ROOT_DIR . 'system/ActiveRecord.php');
+
+/* ActiveRecord setup */
+ActiveRecord\Config::initialize(function($cfg) {
+  global $db;
+  $cfg->set_model_directory(MODELS);
+  $cfg->set_connections(
+    array(
+      'development' => 'mysql://'.$db['user'].':'.$db['password'].'@'.$db['server'].'/'.$db['db_name'].''
+    )
+  ); 
+});
+
+/* Custom class auto loader */
+
+function activerecord_autoload($class_name) {
+  $path = ActiveRecord\Config::instance()->get_model_directory();
+  $root = realpath(isset($path) ? $path : '.');
+
+  if (($namespaces = ActiveRecord\get_namespaces($class_name))) {
+    $class_name = array_pop($namespaces);
+    $directories = array();
+    foreach ($namespaces as $directory) {
+      $directories[] = $directory;
+    }
+    $root .= DIRECTORY_SEPARATOR . implode($directories, DIRECTORY_SEPARATOR);
+  }
+
+  # TODO: REFACTOR THIS
+
+  $file           = "$root/$class_name.php";
+  $loadController = CONTROLLERS . $class_name . ".php";
+  $loadLib        = LIBS        . $class_name . ".php";
+
+  if (file_exists($file)) { require $file; }
+  if (file_exists($loadController)) { require $loadController; }
+  if (file_exists($loadLib)) { require $loadLib; }
 }

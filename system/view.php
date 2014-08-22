@@ -7,14 +7,11 @@ class View {
   public $css      = array();
   public $js       = array();
   public $router;
-  public $parts    = array();
 
   public function __construct() {
     global $router;
     $this->router = $router;
-    $this->parts["menu"] = VIEW . 'layout/menu.php';
-    $this->setCSS(array(array("reset.css"), array("style.css"), array("menu.css")));
-    $this->setJS(array(array("jquery-1.11.0.min.js")));
+    $this->setCSS(array(array("reset.css")));
   }
 
   public function loadView($yield) {
