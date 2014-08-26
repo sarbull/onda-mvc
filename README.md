@@ -19,9 +19,9 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
    - User.php
  - views/
    - layout/
-     - footer.php
-     - header.php
-     - page.php
+      - footer.php
+      - header.php
+      - page.php
    - welcome/
      - index.php
 2. config/
