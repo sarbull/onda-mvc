@@ -17,9 +17,8 @@
       <h1>Welcome to Onda-MVC</h1>
       <p>This MVC is 100% PHP. Thank you for downloading. It gets job done.</p>
       <h2>Quick start</h2>
-      <p>You can start by creating your <strong>config.php</strong> file in the
-      <strong>/config/</strong> folder, there you will find a
-      <strong>config.php.txt</strong> that can be used.</p>
+      <p>You are here because you created the <strong>config.php</strong> file in the
+      <strong>/config/</strong>.</p>
       <p>This file can be found at <strong>/app/views/welcome/index.php</strong>. 
       The root <strong>'/'</strong> route is currently set on the 'Welcome'
       controller found in <strong>/app/controllers/Welcome.php</strong>. You can
