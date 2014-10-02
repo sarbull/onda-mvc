@@ -17,8 +17,10 @@ This file can be found at /app/views/welcome/index.php. The root '/' route is cu
 To continue, you can generate a controller with the command:
 
 ````bash
-$ php generate/controller.php users
+$ php generate/controller.php users user
 ````
+
+'users' stands for the controller's name and 'user' for the controller's model name.
 
 You can also generate models with the following command:
 
