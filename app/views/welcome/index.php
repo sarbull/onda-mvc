@@ -15,6 +15,8 @@
     </style>
     <div id="welcome">
       <h1>Welcome to Onda-MVC</h1>
+      <p>This MVC is 100% PHP. Thank you for downloading. It gets job done.</p>
+      <h2>Quick overview</h2>
       <p>This file can be found at <strong>/app/views/welcome/index.php</strong>. 
       The root <strong>'/'</strong> route is currently set on the 'Welcome'
       controller found in <strong>/app/controllers/Welcome.php</strong>. You can
@@ -25,6 +27,6 @@
       </code>
       <p>You can also generate models with the following command:</p>
       <code>
-        $ php generate/model user field1:integer field2:string field3:text
+        $ php generate/model user field1 field2 field3
       </code>
     </div>
