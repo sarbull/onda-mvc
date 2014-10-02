@@ -7,6 +7,12 @@ global $router;
 global $config;
 global $db;
 
+/* Default settings */
+
+$config['http_host'] = $_SERVER['HTTP_HOST'];
+$config['base_path'] = dirname($_SERVER['PHP_SELF']);
+$config['base_url']  = 'http://' . $config['http_host'] . $config['base_path'];
+
 /* Global defines */
 
 define('APP_DIR'      , ROOT_DIR . 'app/');
@@ -16,12 +22,6 @@ define('VIEW'         , APP_DIR  . 'views/');
 define('MODELS'       , APP_DIR  . 'models/');
 define('BASE_URL'     , $config['base_url']);
 define('PUBLIC_FOLDER', $config['base_url'] . "public/");
-
-/* Default settings */
-
-$config['http_host'] = $_SERVER['HTTP_HOST'];
-$config['base_path'] = dirname($_SERVER['PHP_SELF']);
-$config['base_url']  = 'http://' . $config['http_host'] . $config['base_path'];
 
 /* Database settings */
 
