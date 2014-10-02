@@ -5,8 +5,6 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.+) - [PT,L]
 
 RewriteRule ^css/(.*)$ public/css/$1 [L]
-RewriteRule ^fonts/(.*)$ public/fonts/$1 [L]
-RewriteRule ^font-awesome-4.1.0/(.*)$ public/font-awesome-4.1.0/$1 [L]
 RewriteRule ^img/(.*)$ public/img/$1 [L]
 RewriteRule ^js/(.*)$ public/js/$1 [L]
 RewriteRule ^uploads/(.*)$ public/uploads/$1 [L]
