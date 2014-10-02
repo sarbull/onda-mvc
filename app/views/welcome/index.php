@@ -25,8 +25,9 @@
       see the routes in <strong>/config/routes.php</strong>.</p>
       <p>To continue, you can generate a controller with the command:</p>
       <code>
-        $ php generate/controller.php users
+        $ php generate/controller.php users user
       </code>
+      <p>The 'users' stands for the controller's name and 'user' for the controller's model name.</p>
       <p>You can also generate models with the following command:</p>
       <code>
         $ php generate/model.php user users field1:int:11 field2:decimal:5,2 field3:varchar:40
