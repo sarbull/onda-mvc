@@ -68,11 +68,11 @@ class '. $class_name .' extends Controller {
   $routes = fopen('config/routes.php', 'a') or die('Unable to open file!');
 $new_routes = '
   $router->map("GET", "/'. $view_name .'", "'. $class_name .'#index", "' . $view_name . '_index");
-  $router->map("GET", "/'. $view_name .'/:id/show", "'. $class_name .'#show", "' . $view_name . '_show");
-  $router->map("GET", "/'. $view_name .'/:id/edit", "'. $class_name .'#edit", "' . $view_name . '_edit");
-  $router->map("GET", "/'. $view_name .'/:id/create", "'. $class_name .'#create", "' . $view_name . '_create");
-  $router->map("POST", "/'. $view_name .'/:id/update", "'. $class_name .'#update", "' . $view_name . '_update");
-  $router->map("POST", "/'. $view_name .'/:id/destroy", "'. $class_name .'#destroy", "' . $view_name . '_destroy");
+  $router->map("GET", "/'. $view_name .'/[i:id]/show", "'. $class_name .'#show", "' . $view_name . '_show");
+  $router->map("GET", "/'. $view_name .'/[i:id]/edit", "'. $class_name .'#edit", "' . $view_name . '_edit");
+  $router->map("GET", "/'. $view_name .'/[i:id]/create", "'. $class_name .'#create", "' . $view_name . '_create");
+  $router->map("POST", "/'. $view_name .'/[i:id]/update", "'. $class_name .'#update", "' . $view_name . '_update");
+  $router->map("POST", "/'. $view_name .'/[i:id]/destroy", "'. $class_name .'#destroy", "' . $view_name . '_destroy");
 ';
 
   fwrite($routes, $new_routes);
