@@ -8,7 +8,7 @@
         width:450px;
         margin:auto;
         font-size:12px;
-        margin-top:130px;
+        margin-top:100px;
         color:#555;
         text-align:justify;
       }
@@ -30,7 +30,9 @@
       </code>
       <p>You can also generate models with the following command:</p>
       <code>
-        $ php generate/model user field1 field2 field3
+        $ php generate/model.php user users field1:int:11 field2:decimal:5,2 field3:varchar:40
       </code>
+      <p>The first <strong>'user'</strong> is the name of the model and the second <strong>'users'</strong>
+      is the multiplied name of the db table that will be generated in <strong>/db/migrations/</strong>.</p>
       <p>You can contribute to this project on <a href="http://github.com/sarbull/onda-mvc" target="_blank">http://github.com/sarbull/onda-mvc</a>.</p>
     </div>
