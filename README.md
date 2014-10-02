@@ -12,7 +12,7 @@ My implementation of a simple MVC in PHP.
 
 You can start by creating your config.php file in the /config/ folder, there you will find a config.php.txt that can be used.
 
-This file can be found at /app/views/welcome/index.php. The root '/' route is currently set on the 'Welcome' controller found in /app/controllers/Welcome.php. You can see the routes in /config/routes.php.
+The root '/' route is currently set on the 'Welcome' controller found in /app/controllers/Welcome.php. You can see the routes in /config/routes.php.
 
 To continue, you can generate a controller with the command:
 
@@ -29,9 +29,6 @@ $ php generate/model.php user users field1:int:11 field2:decimal:5,2 field3:varc
 ````
 
 The first 'user' is the name of the model and the second 'users' is the multiplied name of the db table that will be generated in /db/migrations/.
-
-## Config
-Just create a new config.php out of config/config.php.txt and configure it as you need.
 
 ## File structure
 1. app/
