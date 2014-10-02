@@ -23,7 +23,7 @@
       see the routes in <strong>/config/routes.php</strong>.</p>
       <p>For a quick start you can generate a controller with the command:</p>
       <code>
-        $ php generate/controller users
+        $ php generate/controller.php users
       </code>
       <p>You can also generate models with the following command:</p>
       <code>
