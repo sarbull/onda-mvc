@@ -26,22 +26,25 @@ Just create a new config.php out of config/config.php.txt and configure it as yo
      - index.php
 2. config/
  - config.php.txt
-3. libs/
+ - routes.php
+3. generate/
+ - controller.php
+4. libs/
  - php-activerecord/
  - Redirect.php
-4. public/
+5. public/
  - css/
  - img/
  - js/
  - uploads/
-5. system/
+6. system/
  - ActiveRecord.php
  - AltoRouter.php
  - Application.php
  - Controller.php
  - View.php
-6. .htaccess
-7. index.php
+7. .htaccess
+8. index.php
 
 ## Contributing
 - Fork it
