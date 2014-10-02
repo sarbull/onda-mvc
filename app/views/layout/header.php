@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><?=@$page_title ? $page_title : "Welcome"; ?></title>
+    <title><?=@$title ? $title : "Welcome to Onda-MVC"; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="keywords" content="">
