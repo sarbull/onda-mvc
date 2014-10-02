@@ -11,7 +11,9 @@ class View {
   public function __construct() {
     global $router;
     $this->router = $router;
-    $this->setCSS(array(array("reset.css")));
+    $this->setCSS(array(
+      //array("preset.css")
+    ));
   }
 
   public function loadView($yield) {
