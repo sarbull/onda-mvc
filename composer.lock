@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4e3181286413d0024b4945dd4b20b029",
+    "hash": "ec2ad4ec19057e30d98a18bd5adbc0f0",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -786,6 +786,61 @@
             "time": "2015-01-17 23:49:21"
         },
         {
+            "name": "ruckusing/ruckusing-migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruckus/ruckusing-migrations.git",
+                "reference": "5f12f4d1aa2f0dab5100f515a1f3557df4709922"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruckus/ruckusing-migrations/zipball/5f12f4d1aa2f0dab5100f515a1f3557df4709922",
+                "reference": "5f12f4d1aa2f0dab5100f515a1f3557df4709922",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "ruckus.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ruckusing": "lib/",
+                    "Task": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cody Caughlan",
+                    "email": "codycaughlan@gmail.com",
+                    "homepage": "https://github.com/ruckus/ruckusing-migrations/wiki",
+                    "role": "Project lead / Developer"
+                }
+            ],
+            "description": "Framework for generating and managing database migrations",
+            "homepage": "https://github.com/ruckus/ruckusing-migrations",
+            "keywords": [
+                "database",
+                "migrations",
+                "mysql",
+                "postgres",
+                "rake",
+                "ruckusing",
+                "task"
+            ],
+            "time": "2015-04-07 21:10:47"
+        },
+        {
             "name": "symfony/finder",
             "version": "v2.6.6",
             "target-dir": "Symfony/Component/Finder",
@@ -884,57 +939,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
             "time": "2015-03-30 15:54:10"
-        },
-        {
-            "name": "twitter/bootstrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "a2680e8b6ba628312780b00d8d74d28d28b89a84"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/a2680e8b6ba628312780b00d8d74d28d28b89a84",
-                "reference": "a2680e8b6ba628312780b00d8d74d28d28b89a84",
-                "shasum": ""
-            },
-            "replace": {
-                "twitter/bootstrap": "self.version"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                },
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                }
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "http://getbootstrap.com",
-            "keywords": [
-                "JS",
-                "css",
-                "framework",
-                "front-end",
-                "less",
-                "mobile-first",
-                "responsive",
-                "web"
-            ],
-            "time": "2015-04-23 06:18:46"
         }
     ],
     "packages-dev": [],
@@ -944,7 +948,7 @@
         "php-activerecord/php-activerecord": 20,
         "altorouter/altorouter": 20,
         "duncan3dc/blade": 20,
-        "twitter/bootstrap": 20
+        "ruckusing/ruckusing-migrations": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

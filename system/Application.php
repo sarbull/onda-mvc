@@ -3,8 +3,10 @@
 $match = $router->match();
 
 ActiveRecord\Config::initialize(function($cfg) use ($db) {
-   $cfg->set_model_directory(ROOT_DIR . 'app/models');
-   $cfg->set_connections($db);
+  $cfg->set_model_directory(ROOT_DIR . 'app/models');
+  $cfg->set_connections([
+    'development' => 'mysql://'.$db['user'].':'.$db['password'].'@'.$db['server'].'/'.$db['database']
+  ]);
 });
 
 if ($match === false) {

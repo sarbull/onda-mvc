@@ -1,0 +1,11 @@
+<?php
+
+require 'vendor/autoload.php';
+
+if($argv[1] == 'migration') {
+  echo shell_exec('php vendor/ruckusing/ruckusing-migrations/ruckus.php ' . $argv[2]);
+}
+
+if($argv[1] == 'serve') {
+  shell_exec('php -S localhost:8000 -t public');
+}

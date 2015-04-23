@@ -1,6 +1,6 @@
 <?php
 
-include ROOT_DIR . 'config/app.php';
+include ROOT_DIR . 'config/db.php';
 
 foreach (glob(ROOT_DIR . 'app/controllers/*.php') as $filename) {
   include $filename;
