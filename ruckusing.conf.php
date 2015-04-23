@@ -2,17 +2,18 @@
 date_default_timezone_set('UTC');
 
 define('ROOT_DIR', realpath(dirname(__FILE__)) .'/');
+require ROOT_DIR . 'config/db.php';
 
 return [
   'db' => [
     'development' => [
-      'type' => 'mysql',
-      'host' => 'localhost',
-      'port' => 3306,
-      'database' => 'onda',
-      'user' => 'onda_user',
-      'password' => 'onda_password',
-      'charset' => 'utf8',
+      'type'     => 'mysql',
+      'host'     => $db['host'],
+      'port'     => 3306,
+      'database' => $db['database'],
+      'user'     => $db['user'],
+      'password' => $db['password'],
+      'charset'  => 'utf8',
     ],
   ],
   'migrations_dir' => ['default' => ROOT_DIR . '/db/migrations'],
