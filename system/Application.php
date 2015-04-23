@@ -1,39 +1,21 @@
 <?php
 
-class Application {
+$match = $router->match();
 
-  function __construct() {
-    global $config;
-    global $router;
-    $router = new AltoRouter();
-    $router->setBasePath($config['base_path']);
-    $this->routes();
-    $this->handleRequest();
-  }
+ActiveRecord\Config::initialize(function($cfg) use ($db) {
+   $cfg->set_model_directory(ROOT_DIR . 'app/models');
+   $cfg->set_connections($db);
+});
 
-  public function handleRequest() {
-    global $router;
-    $match = $router->match();
-    if($match){
-      $load = explode("#", $match["target"]);
-      $this->loadController($load[0], $load[1], $match['params']);
+if ($match === false) {
+    // 404 error
+    header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+} else {
+    list( $controller, $action ) = explode( '#', $match['target'] );
+    if ( is_callable(array($controller, $action)) ) {
+        call_user_func_array(array(new $controller, $action), array($match['params']));
     } else {
-      die('page not found.');
+      // 500 error
+      echo "Not found";
     }
-  }
-
-  public function loadController($controller, $method, $params) {
-    $controller = new $controller;
-    if(method_exists($controller, $method)) {
-      $controller->{$method}($params);
-    } else {
-      die('controller file not found.');
-    }
-  }
-
-  public function routes() {
-    global $router;
-    include("config/routes.php");
-  }
-
 }

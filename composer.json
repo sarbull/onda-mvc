@@ -1,0 +1,15 @@
+{
+    "name": "sarbull/onda-mvc",
+    "authors": [
+        {
+            "name": "Sirbu Nicolae-Cezar",
+            "email": "sirbunicolaecezar@gmail.com"
+        }
+    ],
+    "require": {
+      "php-activerecord/php-activerecord": "dev-master",
+      "altorouter/altorouter": "dev-master",
+      "duncan3dc/blade": "dev-master",
+      "twitter/bootstrap": "3.3.*@dev"
+    }
+}

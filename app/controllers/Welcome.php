@@ -1,14 +1,9 @@
 <?php
 
-class Welcome extends Controller {
-
-  public function __construct() {
-    parent::__construct();
-  }
+class Welcome extends ApplicationController {
 
   public function index() {
-    $this->view->loadView('welcome/index');
-    $this->view->render();
+    view('welcome.index');
   }
 
 }

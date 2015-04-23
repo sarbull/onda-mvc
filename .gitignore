@@ -1,3 +1,4 @@
-
-# Ignore config.php file
 config/config.php
+
+/vendor/
+/cache/
