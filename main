@@ -3,7 +3,7 @@
 require 'vendor/autoload.php';
 
 if($argv[1] == 'migration') {
-  echo shell_exec('php vendor/ruckusing/ruckusing-migrations/ruckus.php ' . $argv[2]);
+  echo shell_exec('php vendor/ruckusing/ruckusing-migrations/ruckus.php ' . $argv[2] . ' ' . @$argv[3]);
 }
 
 if($argv[1] == 'serve') {
