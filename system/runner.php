@@ -13,7 +13,7 @@ $router = new AltoRouter();
 
 include ROOT_DIR . 'system/helpers.php';
 
-include ROOT_DIR . 'config/routes.php';
+include ROOT_DIR . 'app/routes.php';
 
 include ROOT_DIR . 'system/application.php';
 
